@@ -1,0 +1,21 @@
+<style>
+body {
+  font-family: sans-serif;
+  font-size: 120%;
+}
+textarea {
+  font-size: 100%;
+}
+input[type=submit] {
+  cursor: pointer;
+  font-size: 120%;
+  background: none;
+  width: 10em;
+  height: 2em;
+  margin-top: .5em;
+}
+</style>
+
+<h1>Masterlock Recovery Page</h1>
+
+<p>Sorry, you did not make your payment.</p>

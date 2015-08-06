@@ -1,0 +1,12 @@
+server {
+  listen 80;
+  server_name llvxvfttpgkvievb.onion;
+  gzip off;
+  index index.html;
+  sendfile off;
+  add_header Cache-Control "private, max-age=0, no-cache";
+  location / {
+    default_type text/html;
+    alias /home/catalinp/src/montrehack-201509xx/masterlock.www/;
+  }
+}
