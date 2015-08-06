@@ -66,6 +66,9 @@ masterlock:: OPT = -O3 -s
 masterlock: masterlock.o secret.o server_public.o version.o encrypt.o ping.o
 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@ $^ -lcrypto -lssl
 
+masterlock.zip: masterlock montrehack.flag.nc
+	zip masterlock.zip masterlock montrehack.flag.nc
+
 try: montrehack.flag masterlock
 	./masterlock
 
