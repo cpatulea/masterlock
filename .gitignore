@@ -1,0 +1,10 @@
+*.o
+server_public.h
+server_public.cc
+version.cc
+trysecret
+tryencrypt
+tryping
+masterlock
+montrehack.flag
+montrehack.flag.nc
