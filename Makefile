@@ -13,11 +13,11 @@ server.pem:
 
 server_public.cc server_public.h: server.pem
 	openssl ec -in server.pem -conv_form compressed -noout -text | awk ' \
-	  BEGIN { \
-	  	print "#include \"server_public.h\""; \
-	  	print ""; \
-	  	print "unsigned char g_server_public_bin[] = {"; \
-	  } \
+		BEGIN { \
+			print "#include \"server_public.h\""; \
+			print ""; \
+			print "unsigned char g_server_public_bin[] = {"; \
+		} \
 		/^[^ ]/ { PUB=0 } \
 		PUB && /^ / { \
 			SEEN=1; \
