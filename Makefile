@@ -69,6 +69,9 @@ masterlock: masterlock.o secret.o server_public.o version.o encrypt.o ping.o
 masterlock.zip: masterlock montrehack.flag.nc
 	zip masterlock.zip masterlock montrehack.flag.nc
 
+masterlock-src.zip: masterlock
+	zip masterlock-src.zip assert.h encrypt.cc encrypt.h masterlock.cc ping.cc ping.h secret.cc secret.h server_public.cc server_public.h version.cc version.h
+
 try: montrehack.flag masterlock
 	./masterlock
 
