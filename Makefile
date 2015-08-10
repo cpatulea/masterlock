@@ -42,7 +42,7 @@ tryencrypt.o:: encrypt.h secret.h
 tryping.o:: secret.h ping.h
 trysecret.o:: secret.h
 
-version.cc: *.cc *.h
+version.cc: *.cc *.h .git/refs/heads/master
 	echo "#include \"version.h\"" > version.cc
 	echo "const char *kVersion = \"$$(git describe --always --dirty)\";" >> version.cc
 
@@ -69,8 +69,8 @@ masterlock: masterlock.o secret.o server_public.o version.o encrypt.o ping.o
 masterlock.zip: masterlock montrehack.flag.nc
 	zip masterlock.zip masterlock montrehack.flag.nc
 
-masterlock-src.zip: masterlock
-	zip masterlock-src.zip assert.h encrypt.cc encrypt.h masterlock.cc ping.cc ping.h secret.cc secret.h server_public.cc server_public.h version.cc version.h
+masterlock-src.zip: assert.h encrypt.cc encrypt.h masterlock.cc ping.cc ping.h secret.cc secret.h server_public.cc server_public.h version.cc version.h
+	zip masterlock-src.zip $^
 
 try: montrehack.flag masterlock
 	./masterlock
