@@ -44,7 +44,7 @@ void initsecret() {
   assert(read(fd, g_rawsecret, sizeof(g_rawsecret)) == sizeof(g_rawsecret));
   assert(close(fd) >= 0);
 #else
-  hex2bin("0031e6b6fc16c3df9337f72f20d56398", g_rawsecret);
+  hex2bin(SECRET, g_rawsecret);
 #endif
 
   g_secret = BN_bin2bn(g_rawsecret, sizeof(g_rawsecret), NULL);
