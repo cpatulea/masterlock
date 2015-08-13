@@ -29,6 +29,7 @@ while not (20.0 <= dt <= 30.0 and factors < 20):
       ['./trysecret', hex(n).lstrip('0x').rstrip('L')])
   for line in stdout.splitlines():
     if line.startswith('Wrapped key: '):
+      print line.rstrip()
       _, _, wrapped_key = line.partition(': ')
       break
   else:
@@ -38,7 +39,7 @@ while not (20.0 <= dt <= 30.0 and factors < 20):
   unlink_f('msieve.log')
   unlink_f('msieve.dat')
   subprocess.check_call([
-      '/Users/catalinp/src/msieve/msieve',
+      '../msieve/msieve',
       '-t', '1', '-d', '1',
       wrapped_key,
   ])

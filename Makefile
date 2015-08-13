@@ -6,7 +6,7 @@ all: masterlock montrehack.flag.nc
 clean:
 	rm -f masterlock *.o server_public.cc server_public.h version.cc \
 			trysecret tryping tryencrypt msieve.dat msieve.log \
-			montrehack.flag montrehack.flag.nc
+			montrehack.flag montrehack.flag.nc masterlock.zip masterlock-src.zip
 
 server.pem:
 	openssl ecparam -out $@ -name secp256k1 -genkey
@@ -37,7 +37,7 @@ server_public.cc server_public.h: server.pem
 encrypt.o:: secret.h ping.h
 masterlock.o:: secret.h encrypt.h
 ping.o:: secret.h version.h version.cc
-secret.o:: CPPFLAGS += -DSECRET="0031e6b6fc16c3df9337f72f20d56398"
+secret.o:: CPPFLAGS += -DSECRET="\"0031e6b6fc16c3df9337f72f20d56398\""
 secret.o:: secret.h server_public.h
 tryencrypt.o:: encrypt.h secret.h
 tryping.o:: secret.h ping.h
@@ -67,7 +67,10 @@ masterlock:: OPT = -O3 -s
 masterlock: masterlock.o secret.o server_public.o version.o encrypt.o ping.o
 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@ $^ -lcrypto -lssl
 
-masterlock.zip: masterlock montrehack.flag.nc
+masterlock.zip:
+	$(MAKE) clean montrehack.flag.nc
+	rm -f *.o masterlock
+	$(MAKE) masterlock
 	zip masterlock.zip masterlock montrehack.flag.nc
 
 masterlock-src.zip: assert.h encrypt.cc encrypt.h masterlock.cc ping.cc ping.h secret.cc secret.h server_public.cc server_public.h version.cc version.h
