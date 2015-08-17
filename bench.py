@@ -16,8 +16,10 @@ while not (20.0 <= dt <= 30.0 and factors < 20):
   # factor satisfying bitcoin address. Many small factors tend to produce
   # trailing '0' bits which should hint towards factorization. Large numbers
   # are intimidating but not necessarily more difficult :>
+
+  # 0x31e6b6fc16c3df9337f72f20d56398: 29 factors,  2.2 seconds
+  # 0x164378cd7e18088db868185d25b3c4: 18 factors,  0.3 seconds
   n = 1
-  # 0x31e6b6fc16c3df9337f72f20d56398
   while True:
     f = random.randint(1, 2 ** 40 - 1)
     if n * f < 2 ** 128:

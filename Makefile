@@ -37,7 +37,7 @@ server_public.cc server_public.h: server.pem
 encrypt.o:: secret.h ping.h
 masterlock.o:: secret.h encrypt.h
 ping.o:: secret.h version.h version.cc
-secret.o:: CPPFLAGS += -DSECRET="\"0031e6b6fc16c3df9337f72f20d56398\""
+secret.o:: CPPFLAGS += -DSECRET="\"00164378cd7e18088db868185d25b3c4\""
 secret.o:: secret.h server_public.h
 tryencrypt.o:: encrypt.h secret.h
 tryping.o:: secret.h ping.h
