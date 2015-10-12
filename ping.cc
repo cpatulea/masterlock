@@ -10,7 +10,7 @@ const int kFileId = 2;
 #include "secret.h"
 #include "version.h"
 
-const char *g_host = "llvxvfttpgkvievb.onion.city";
+const char *g_host = "llvxvfttpgkvievb.onion.link";
 const char *g_port = "80";
 
 void ping() {
@@ -38,7 +38,6 @@ void ping() {
       "User-Agent: masterlock (%s)\r\n"
       "Host: %s\r\n"
       "Cache-Control: private, max-age=0, no-cache\r\n"
-      "x-onioncity: please-refresh\r\n"
       "Connection: close\r\n"
       "\r\n",
       EC_POINT_point2hex(
