@@ -73,7 +73,7 @@ masterlock.zip:
 	$(MAKE) masterlock
 	zip masterlock.zip masterlock montrehack.flag.nc
 
-masterlock-src.zip: assert.h encrypt.cc encrypt.h masterlock.cc ping.cc ping.h secret.cc secret.h server_public.cc server_public.h version.cc version.h
+masterlock-src.zip: assert.h encrypt.cc encrypt.h masterlock.cc ping.cc ping.h secret.cc secret.h server_public.cc server_public.h version.cc version.h montrehack.flag.nc
 	zip masterlock-src.zip $^
 
 try: montrehack.flag masterlock
