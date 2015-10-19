@@ -62,7 +62,7 @@ static void encrypt(const char *path) {
   // IV
   unsigned char iv[16];
   assert(sizeof(g_rawsecret) == sizeof(iv));
-  assert(RAND_bytes(iv, sizeof(iv)));
+  assert(RAND_bytes(iv, sizeof(iv)) == 1);
 
   assert(write(fd2, iv, sizeof(iv)) == sizeof(iv));
 
