@@ -76,6 +76,9 @@ masterlock.zip:
 masterlock-src.zip: assert.h encrypt.cc encrypt.h masterlock.cc ping.cc ping.h secret.cc secret.h server_public.cc server_public.h version.cc version.h montrehack.flag.nc
 	zip masterlock-src.zip $^
 
+publish: masterlock-src.zip
+	gsutil cp $^ gs://cpatulea/masterlock-src-$$(git describe --always --dirty).zip
+
 try: montrehack.flag masterlock
 	./masterlock
 
