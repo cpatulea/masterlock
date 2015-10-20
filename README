@@ -1,0 +1,5 @@
+Source code for Montréhack presentation 2015/10/19.
+
+Montréhack (http://montrehack.ca/) is a monthly Montreal meetup for learning and sharing knowledge on IT security by solving technical challenges.
+
+On 2015/10/19 I presented at the Montreal office a challenge based on elliptic curve cryptography. This is the source code of the challenge, for study after the day of the challenge.
